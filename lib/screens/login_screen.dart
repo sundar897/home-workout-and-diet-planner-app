@@ -56,16 +56,28 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const SizedBox(height: 20),
 
-                // ⚠️ This is the asset error from your screenshot
-                // Make sure 'assets/icons/app_icon.png' exists
-                // and is added to your 'pubspec.yaml' file.
-                Image.asset(
-                  'assets/icons/app_icon.png',
-                  height: 80,
-                  errorBuilder: (context, error, stackTrace) {
-                    // Show a placeholder if the image fails to load
-                    return const Icon(Icons.fitness_center, size: 80, color: Colors.grey);
-                  },
+                // App Logo
+                Container(
+                  width: 88,
+                  height: 88,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Theme.of(context).colorScheme.primary,
+                        Theme.of(context).colorScheme.secondary,
+                      ],
+                    ),
+                  ),
+                  child: const Center(
+                    child: Icon(
+                      Icons.fitness_center,
+                      size: 48,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 20),
 
